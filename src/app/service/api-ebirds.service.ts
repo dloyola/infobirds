@@ -11,7 +11,7 @@ export class ApiEbirdsService {
 
   private httpOptions = {
     headers: new HttpHeaders({
-      "X-eBirdApiToken": "epjlek5tbol2"
+      "X-eBirdApiToken": null;
     })
   };
 
