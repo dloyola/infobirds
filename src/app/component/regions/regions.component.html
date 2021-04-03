@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>{{title}}</mat-label>
+    <mat-select (selectionChange)="selectOption($event.value)">
+        <mat-option *ngFor="let region of regionsList" [value]="region.ISO2">
+            {{region.country}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

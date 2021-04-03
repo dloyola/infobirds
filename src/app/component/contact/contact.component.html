@@ -1,0 +1,48 @@
+<mat-card class="card">
+    <mat-card-content class="card-content" *ngIf="!sent">
+      <div style="color: white"></div>
+      <form class="inputs" [formGroup]="contactForm" (ngSubmit)="onSubmit()" #contactFormView="ngForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" name="name" matInput placeholder="Escribe un nombre">
+          <mat-error *ngIf="(contactFormControls.name.touched || submitted) && contactFormControls.name.errors?.required">
+            Se requiere el Nombre
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input formControlName="lastname" name="lastname" matInput placeholder="Escribe un apellido">
+          <mat-error *ngIf="(contactFormControls.lastname.touched || submitted) && contactFormControls.lastname.errors?.required">
+            Se requiere el Apellido
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>correo electronico</mat-label>
+          <input formControlName="email" name="email" matInput placeholder="Escribe un correo electronico">
+          <mat-error *ngIf="(contactFormControls.email.touched || submitted) && contactFormControls.email.errors?.required">
+            Se requiere el Email
+          </mat-error>
+          <mat-error *ngIf="(contactFormControls.email.touched || submitted) && contactFormControls.email.errors?.email">
+            Formato de Email invalido
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Mensaje</mat-label>
+          <textarea class="textarea"
+          formControlName="message" name="message" matInput placeholder="Escribe un mensaje">
+          </textarea>
+          <mat-error *ngIf="(contactFormControls.message.touched || submitted) && contactFormControls.message.errors?.required">
+            Se requiere el Mensaje
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <button class="btn" type="submit" >Enviar</button>
+      </form>
+    </mat-card-content>
+    <mat-card-content class="card-content" *ngIf="sent">
+      <p>{{message}}</p>
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,8 @@
+.title {
+    display: flex;
+    justify-content: center;
+}
+.dropdown {
+    display: flex;
+    justify-content: center;
+}
