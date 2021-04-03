@@ -11,7 +11,7 @@ export class ApiEbirdsService {
 
   private httpOptions = {
     headers: new HttpHeaders({
-      "X-eBirdApiToken": "epjlek5tbol2"
+      "X-eBirdApiToken": environment.ebirdsToken,
     })
   };
 
@@ -29,4 +29,3 @@ export class ApiEbirdsService {
     return this.http.get<EBird[]>(url, this.httpOptions);
   }
 }
-
