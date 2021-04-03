@@ -1,12 +1,18 @@
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule, MatTabsModule, BrowserAnimationsModule],
       declarations: [
         AppComponent
       ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     }).compileComponents();
   });
 
@@ -26,6 +32,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('infoBirds app is running!');
+    expect(compiled.querySelector('p').textContent).toContain("for testing");
   });
 });

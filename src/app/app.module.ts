@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -59,7 +59,8 @@ import { ContactComponent } from './component/contact/contact.component';
     MatFormFieldModule,
     ReactiveFormsModule,
   ],
-  providers: [HttpClient, HttpClientModule, ApiEbirdsService],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
+  providers: [HttpClient, ApiEbirdsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
