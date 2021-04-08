@@ -40,8 +40,8 @@ export class ContactComponent implements OnInit{
     this.submitted = true;
     if (this.contactForm.valid) {
       this.sent = true;
-      this.message = `Hola ${this.contactForm.value.name}! tu mensaje fue enviado con exito.`;
-      setTimeout(this.resetForm, 10000);
+      this.message = `Hola ${this.contactForm.value.name}! tu mensaje fue enviado con éxito.`;
+      setTimeout(this.resetForm, 5000);
     } else {
       console.log("mensaje no enviado");
     }
